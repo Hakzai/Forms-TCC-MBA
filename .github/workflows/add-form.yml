@@ -1,0 +1,52 @@
+name: Add Form
+
+on:
+  workflow_dispatch:
+    inputs:
+      author:
+        description: "Author name"
+        required: true
+      theme:
+        description: "Research theme"
+        required: true
+      url:
+        description: "Google Forms URL"
+        required: true
+      deadline:
+        description: "Deadline (YYYY-MM-DD)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  add-form:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Add form to JSON
+        run: |
+          node scripts/add-form.js \
+            "${{ github.event.inputs.author }}" \
+            "${{ github.event.inputs.theme }}" \
+            "${{ github.event.inputs.url }}" \
+            "${{ github.event.inputs.deadline }}"
+
+      - name: Generate README
+        run: node scripts/generate-readme.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/forms.json README.md
+          git commit -m "Add new form"
+          git push

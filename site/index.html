@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormsTCC Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="kicker">MBA Engenharia de Software</p>
+          <h1>FormsTCC Hub</h1>
+          <p class="subtitle">
+            Central rapido para encontrar e compartilhar formularios de pesquisa de TCC.
+          </p>
+        </div>
+        <div class="stats">
+          <div>
+            <span id="total-count">0</span>
+            <small>Formularios</small>
+          </div>
+          <div>
+            <span id="active-count">0</span>
+            <small>Ativos</small>
+          </div>
+          <div>
+            <span id="expired-count">0</span>
+            <small>Encerrados</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="list" id="forms"></section>
+
+      <footer class="footer">
+        Atualize via GitHub Actions &middot; Dados em JSON
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
