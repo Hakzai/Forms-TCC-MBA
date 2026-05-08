@@ -2,6 +2,10 @@ name: Adicionar formulario
 description: Envie um formulario de pesquisa para o hub.
 title: "[Form] "
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Apos enviar, um moderador precisa adicionar o label **aprovado** para publicar no site.
   - type: input
     id: author
     attributes:

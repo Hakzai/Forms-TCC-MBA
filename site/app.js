@@ -30,7 +30,7 @@ const renderEmpty = (container) => {
   container.innerHTML = `
     <div class="empty">
       <h2>Sem formularios ainda</h2>
-      <p>Use o botao "Adicionar formulario" para registrar o primeiro link.</p>
+      <p>Use o botao "Adicionar formulario" e aguarde aprovacao.</p>
     </div>
   `;
 };
