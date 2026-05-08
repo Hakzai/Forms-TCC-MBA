@@ -12,4 +12,4 @@ Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os cam
 
 | Autor | Tema | Formulario | Prazo |
 |---|---|---|---|
-| - | - | - | - |
+| Isaac A. | IA que faz formularios bonitos | [Open Form](https://127.0.0.1:8080/index.html) | - |
