@@ -38,17 +38,36 @@ jobs:
           script: |
             const body = context.payload.issue.body || "";
 
-            const getField = (label) => {
-              const regex = new RegExp(`### ${label}\\s*\\n([\\s\\S]*?)(?=\\n### |$)`, "i");
-              const match = body.match(regex);
-              if (!match) return "";
-              return match[1].trim().split("\n")[0].trim();
+            const getField = (labels) => {
+              const labelList = Array.isArray(labels) ? labels : [labels];
+              for (const label of labelList) {
+                const regex = new RegExp(`### ${label}\\s*\\n([\\s\\S]*?)(?=\\n### |$)`, "i");
+                const match = body.match(regex);
+                if (match) {
+                  return match[1].trim().split("\n")[0].trim();
+                }
+              }
+              return "";
+            };
+
+            const normalizeDeadline = (value) => {
+              if (!value) return "";
+              const trimmed = value.trim();
+              const normalized = trimmed.replace(/\//g, "-");
+              const ymd = normalized.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+              if (ymd) {
+                const [, year, month, day] = ymd;
+                return `${day}-${month}-${year}`;
+              }
+              return normalized;
             };
 
             const author = getField("Autor");
             const theme = getField("Tema");
-            const url = getField("Link do formulario");
-            const deadline = getField("Prazo (opcional)");
+            const url = getField(["Link do formulario", "Link do formulário"]);
+            const deadline = normalizeDeadline(
+              getField(["Prazo (opcional)", "Prazo", "Deadline (opcional)", "Deadline"])
+            );
 
             if (!author || !theme || !url) {
               core.setFailed("Missing required fields in issue form.");
