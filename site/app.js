@@ -17,15 +17,21 @@ const parseDeadline = (deadline) => {
   return null;
 };
 
-const repoUrl = "https://github.com/hakzai/Forms-TCC-MBA";
-const dataBranch = "forms-data";
+const fallbackConfig = {
+  repoUrl: "https://github.com/hakzai/Forms-TCC-MBA",
+  dataBranch: "forms-data"
+};
+
+const appConfig = window.FORMS_CONFIG || fallbackConfig;
+const repoUrl = appConfig.repoUrl;
+const dataBranch = appConfig.dataBranch;
 const issueUrl = `${repoUrl}/issues/new?template=add-form.yml`;
 
 const setupAddFormLink = () => {
   const link = document.getElementById("add-form-link");
   if (!link) return;
 
-  if (repoUrl.includes("OWNER/REPO")) {
+  if (!repoUrl || repoUrl.includes("OWNER/REPO")) {
     link.textContent = "Configurar URL do repositorio";
     link.classList.add("disabled");
     link.setAttribute("aria-disabled", "true");

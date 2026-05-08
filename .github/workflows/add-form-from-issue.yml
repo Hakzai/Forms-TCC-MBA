@@ -83,11 +83,13 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            const rawBase = `https://raw.githubusercontent.com/${context.repo.owner}/${context.repo.repo}`;
+            const dataUrl = `${rawBase}/${process.env.DATA_BRANCH}/data/forms.json`;
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: "Formulario adicionado com sucesso."
+              body: `Formulario adicionado com sucesso.\n\nJSON atualizado: ${dataUrl}`
             });
 
             await github.rest.issues.update({
