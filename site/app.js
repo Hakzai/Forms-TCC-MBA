@@ -3,7 +3,7 @@ const parseDeadline = (deadline) => {
   return new Date(`${deadline}T23:59:59`);
 };
 
-const repoUrl = "https://github.com/OWNER/REPO";
+const repoUrl = "https://github.com/hakzai/Forms-TCC-MBA";
 const issueUrl = `${repoUrl}/issues/new?template=add-form.yml`;
 
 const setupAddFormLink = () => {
