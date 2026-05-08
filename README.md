@@ -17,3 +17,4 @@ Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os cam
 | Velhote Q | Antes da IA tudo isso aqui era só Mato | [Open Form](https://pt.wikipedia.org/) | 01-06-2026 |
 | Keanu R | Essa IA vai roubar meu emprego | [Open Form](https://www.naointendo.com.br/) | 30/05/2026 |
 | Isaac A. | IA que cria Formularios Bonitos | [Open Form](https://chromedino.com/) | - |
+| S. Altman | E se eu pedir pra IA gerar um código que destrói o servidor dela? | [Open Form](https://cat-bounce.com/) | 11-05-2026 |

@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "author": "Bugador D.",
+    "theme": "Como codar com IA sem Bugs",
+    "url": "https://classicosbrasileiros.wordpress.com/wp-content/uploads/2016/05/yvbifl.jpg",
+    "deadline": "2026-05-01",
+    "createdAt": "2026-05-08T01:29:16.163Z"
+  },
+  {
+    "author": "Marina S",
+    "theme": "Se a IA tomar seu emprego, você sabe carpir lote?",
+    "url": "https://pointerpointer.com/",
+    "deadline": "15-05-2026",
+    "createdAt": "2026-05-08T01:38:05.936Z"
+  },
+  {
+    "author": "Velhote Q",
+    "theme": "Antes da IA tudo isso aqui era só Mato",
+    "url": "https://pt.wikipedia.org/",
+    "deadline": "01-06-2026",
+    "createdAt": "2026-05-08T01:20:39.564Z"
+  },
+  {
+    "author": "Keanu R",
+    "theme": "Essa IA vai roubar meu emprego",
+    "url": "https://www.naointendo.com.br/",
+    "deadline": "30/05/2026",
+    "createdAt": "2026-05-08T01:20:07.185Z"
+  },
+  {
+    "author": "Isaac A.",
+    "theme": "IA que cria Formularios Bonitos",
+    "url": "https://chromedino.com/",
+    "deadline": null,
+    "createdAt": "2026-05-08T00:55:43.396Z"
+  },
+  {
+    "author": "S. Altman",
+    "theme": "E se eu pedir pra IA gerar um código que destrói o servidor dela?",
+    "url": "https://cat-bounce.com/",
+    "deadline": "11-05-2026",
+    "createdAt": "2026-05-08T01:52:50.518Z"
+  }
+]
