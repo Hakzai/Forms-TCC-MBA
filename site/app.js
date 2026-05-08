@@ -99,9 +99,11 @@ const sortForms = (forms) => {
 
 const loadForms = async () => {
   const container = document.getElementById("forms");
+  const cacheBust = Date.now();
+  const dataUrl = `../data/forms.json?ts=${cacheBust}`;
 
   try {
-    const response = await fetch("../data/forms.json");
+    const response = await fetch(dataUrl, { cache: "no-store" });
     if (!response.ok) {
       throw new Error("Failed to load forms");
     }
