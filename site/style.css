@@ -127,6 +127,7 @@ h1 {
   background: linear-gradient(120deg, transparent, rgba(15, 118, 110, 0.08));
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .card:hover::after {
@@ -142,6 +143,14 @@ h1 {
 .card p {
   margin: 4px 0;
   color: var(--muted);
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .meta {
@@ -175,7 +184,7 @@ h1 {
 }
 
 .actions {
-  margin-top: 14px;
+  margin-top: 0;
 }
 
 .actions a {
@@ -189,6 +198,7 @@ h1 {
   text-decoration: none;
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
 }
 
 .actions a:hover {

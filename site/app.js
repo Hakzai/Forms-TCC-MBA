@@ -64,13 +64,15 @@ const renderForms = (container, forms) => {
     card.className = `card${expired ? " expired" : ""}`;
     card.innerHTML = `
       <h2>${form.theme}</h2>
-      <div class="meta">
-        <span class="badge">${expired ? "Encerrado" : "Ativo"}</span>
-        <p>Autor: ${form.author}</p>
-        <p>Prazo: ${form.deadline || "-"}</p>
-      </div>
-      <div class="actions">
-        <a href="${form.url}" target="_blank" rel="noopener">Abrir formulario</a>
+      <div class="card-row">
+        <div class="meta">
+          <span class="badge">${expired ? "Encerrado" : "Ativo"}</span>
+          <p>Autor: ${form.author}</p>
+          <p>Prazo: ${form.deadline || "-"}</p>
+        </div>
+        <div class="actions">
+          <a href="${form.url}" target="_blank" rel="noopener">Abrir formulario</a>
+        </div>
       </div>
     `;
 
