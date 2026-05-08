@@ -65,9 +65,16 @@ jobs:
             const author = getField("Autor");
             const theme = getField("Tema");
             const url = getField(["Link do formulario", "Link do formulário"]);
-            const deadline = normalizeDeadline(
+            let deadline = normalizeDeadline(
               getField(["Prazo (opcional)", "Prazo", "Deadline (opcional)", "Deadline"])
             );
+
+            if (!deadline) {
+              const dateMatch = body.match(/(\d{2}[\/\-]\d{2}[\/\-]\d{4}|\d{4}[\/\-]\d{2}[\/\-]\d{2})/);
+              if (dateMatch) {
+                deadline = normalizeDeadline(dateMatch[1]);
+              }
+            }
 
             if (!author || !theme || !url) {
               core.setFailed("Missing required fields in issue form.");
