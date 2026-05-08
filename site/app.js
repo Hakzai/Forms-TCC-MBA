@@ -1,6 +1,20 @@
 const parseDeadline = (deadline) => {
   if (!deadline) return null;
-  return new Date(`${deadline}T23:59:59`);
+  const trimmed = String(deadline).trim();
+  let match = trimmed.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+
+  if (match) {
+    const [, day, month, year] = match;
+    return new Date(Number(year), Number(month) - 1, Number(day), 23, 59, 59);
+  }
+
+  match = trimmed.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (match) {
+    const [, year, month, day] = match;
+    return new Date(Number(year), Number(month) - 1, Number(day), 23, 59, 59);
+  }
+
+  return null;
 };
 
 const repoUrl = "https://github.com/hakzai/Forms-TCC-MBA";
@@ -75,7 +89,11 @@ const sortForms = (forms) => {
     if (aExpired !== bExpired) return aExpired ? 1 : -1;
     if (!a.deadline) return 1;
     if (!b.deadline) return -1;
-    return new Date(a.deadline) - new Date(b.deadline);
+    const aDate = parseDeadline(a.deadline);
+    const bDate = parseDeadline(b.deadline);
+    if (!aDate) return 1;
+    if (!bDate) return -1;
+    return aDate - bDate;
   });
 };
 

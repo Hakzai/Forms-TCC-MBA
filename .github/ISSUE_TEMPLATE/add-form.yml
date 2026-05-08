@@ -34,7 +34,7 @@ body:
     id: deadline
     attributes:
       label: Prazo (opcional)
-      description: Formato YYYY-MM-DD.
-      placeholder: "2026-05-20"
+      description: Formato DD-MM-YYYY.
+      placeholder: "20-05-2026"
     validations:
       required: false

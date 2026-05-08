@@ -9,6 +9,41 @@ const requireValue = (value, label) => {
   }
 };
 
+const parseDateString = (value) => {
+  if (!value) return null;
+  const trimmed = value.trim();
+  let match = trimmed.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+
+  if (match) {
+    const [, day, month, year] = match;
+    const date = new Date(Number(year), Number(month) - 1, Number(day));
+    if (
+      date.getFullYear() !== Number(year) ||
+      date.getMonth() !== Number(month) - 1 ||
+      date.getDate() !== Number(day)
+    ) {
+      return null;
+    }
+    return date;
+  }
+
+  match = trimmed.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (match) {
+    const [, year, month, day] = match;
+    const date = new Date(Number(year), Number(month) - 1, Number(day));
+    if (
+      date.getFullYear() !== Number(year) ||
+      date.getMonth() !== Number(month) - 1 ||
+      date.getDate() !== Number(day)
+    ) {
+      return null;
+    }
+    return date;
+  }
+
+  return null;
+};
+
 requireValue(author, "Author");
 requireValue(theme, "Theme");
 requireValue(url, "URL");
@@ -19,8 +54,12 @@ if (!url.startsWith("https://")) {
 
 const normalizedDeadline = deadline && deadline.trim() ? deadline.trim() : null;
 
-if (normalizedDeadline && !/^\d{4}-\d{2}-\d{2}$/.test(normalizedDeadline)) {
-  throw new Error("Deadline must be in YYYY-MM-DD format");
+if (normalizedDeadline) {
+  const isFormatted = /^\d{2}-\d{2}-\d{4}$/.test(normalizedDeadline);
+  const parsed = parseDateString(normalizedDeadline);
+  if (!isFormatted || !parsed) {
+    throw new Error("Deadline must be in DD-MM-YYYY format");
+  }
 }
 
 const filePath = path.join(__dirname, "../data/forms.json");
@@ -47,7 +86,11 @@ forms.push({
 forms.sort((a, b) => {
   if (!a.deadline) return 1;
   if (!b.deadline) return -1;
-  const dateDiff = new Date(a.deadline) - new Date(b.deadline);
+  const aDate = parseDateString(a.deadline);
+  const bDate = parseDateString(b.deadline);
+  if (!aDate) return 1;
+  if (!bDate) return -1;
+  const dateDiff = aDate - bDate;
   if (dateDiff !== 0) return dateDiff;
   return new Date(a.createdAt) - new Date(b.createdAt);
 });
