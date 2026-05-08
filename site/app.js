@@ -18,6 +18,7 @@ const parseDeadline = (deadline) => {
 };
 
 const repoUrl = "https://github.com/hakzai/Forms-TCC-MBA";
+const dataBranch = "forms-data";
 const issueUrl = `${repoUrl}/issues/new?template=add-form.yml`;
 
 const setupAddFormLink = () => {
@@ -100,7 +101,8 @@ const sortForms = (forms) => {
 const loadForms = async () => {
   const container = document.getElementById("forms");
   const cacheBust = Date.now();
-  const dataUrl = `../data/forms.json?ts=${cacheBust}`;
+  const rawBase = repoUrl.replace("https://github.com/", "https://raw.githubusercontent.com/");
+  const dataUrl = `${rawBase}/${dataBranch}/data/forms.json?ts=${cacheBust}`;
 
   try {
     const response = await fetch(dataUrl, { cache: "no-store" });
