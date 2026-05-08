@@ -6,10 +6,10 @@ Este README e gerado automaticamente a partir de data/forms.json.
 
 ## Como adicionar um formulario
 
-Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os campos. Um moderador aplica o label "aprovado" para publicar.
+Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os campos. Um moderador aplica o label "approved" para publicar.
 
 ## Formularios ativos
 
 | Autor | Tema | Formulario | Prazo |
 |---|---|---|---|
-| Isaac A. | IA que faz formularios bonitos | [Open Form](https://127.0.0.1:8080/index.html) | - |
+| - | - | - | - |
