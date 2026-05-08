@@ -14,3 +14,4 @@ Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os cam
 |---|---|---|---|
 | Bugador D. | Como codar com IA sem Bugs | [Open Form](https://classicosbrasileiros.wordpress.com/wp-content/uploads/2016/05/yvbifl.jpg) | 2026-05-01 |
 | Matheus T. | Governança preventiva de dados: arquitetura e validação de contratos em plataformas analíticas | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSejaZbawklubJwLO2LoQqKCcP-napNOn7MNefqriUjhH6YPog/viewform) | 01-07-2026 |
+| Bruno Z. | Pesquisa sobre práticas de gestão do conhecimento e documentação em projetos de software | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSe4Hz6fU9HunfUbaX8kIY3vRnqTZTfdZvKFLEqh5CNCqBya6g/viewform) | - |
