@@ -13,3 +13,4 @@ Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os cam
 | Autor | Tema | Formulario | Prazo |
 |---|---|---|---|
 | Isaac A. | IA que cria Formularios Bonitos | [Open Form](https://chromedino.com/) | - |
+| Keanu R | Essa IA vai roubar meu emprego | [Open Form](https://www.naointendo.com.br/) | - |
