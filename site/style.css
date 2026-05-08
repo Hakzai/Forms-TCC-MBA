@@ -223,6 +223,10 @@ h1 {
   gap: 6px;
 }
 
+.footer span:first-child {
+  margin-bottom: 10px;
+}
+
 .footer .credits {
   font-size: 13px;
 }
