@@ -15,3 +15,4 @@ Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os cam
 | Isaac A. | IA que cria Formularios Bonitos | [Open Form](https://chromedino.com/) | - |
 | Keanu R | Essa IA vai roubar meu emprego | [Open Form](https://www.naointendo.com.br/) | - |
 | Velhote Q | Antes da IA tudo isso aqui era só Mato | [Open Form](https://pt.wikipedia.org/) | - |
+| Bugador D. | Como codar com IA sem Bugs | [Open Form](https://classicosbrasileiros.wordpress.com/wp-content/uploads/2016/05/yvbifl.jpg) | - |
