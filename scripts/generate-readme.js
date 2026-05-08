@@ -24,7 +24,7 @@ Este README e gerado automaticamente a partir de data/forms.json.
 
 ## Como adicionar um formulario
 
-Use a action "Add Form" na aba GitHub Actions e preencha os campos solicitados.
+Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os campos.
 
 ## Formularios ativos
 

@@ -1,0 +1,36 @@
+name: Adicionar formulario
+description: Envie um formulario de pesquisa para o hub.
+title: "[Form] "
+body:
+  - type: input
+    id: author
+    attributes:
+      label: Autor
+      description: Nome curto para exibir no site.
+      placeholder: "Ex: Maria S."
+    validations:
+      required: true
+  - type: input
+    id: theme
+    attributes:
+      label: Tema
+      description: Tema do seu TCC.
+      placeholder: "Ex: IA aplicada em sistemas distribuidos"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Link do formulario
+      description: URL do Google Forms.
+      placeholder: "https://forms.gle/exemplo"
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Prazo (opcional)
+      description: Formato YYYY-MM-DD.
+      placeholder: "2026-05-20"
+    validations:
+      required: false

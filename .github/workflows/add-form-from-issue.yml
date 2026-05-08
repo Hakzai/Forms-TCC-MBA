@@ -1,0 +1,91 @@
+name: Add Form from Issue
+
+on:
+  issues:
+    types:
+      - opened
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  add-form:
+    if: github.event.issue.pull_request == null
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Parse issue form
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const core = require("@actions/core");
+            const body = context.payload.issue.body || "";
+
+            const getField = (label) => {
+              const regex = new RegExp(`### ${label}\\s*\\n([\\s\\S]*?)(?=\\n### |$)`, "i");
+              const match = body.match(regex);
+              if (!match) return "";
+              return match[1].trim().split("\n")[0].trim();
+            };
+
+            const author = getField("Autor");
+            const theme = getField("Tema");
+            const url = getField("Link do formulario");
+            const deadline = getField("Prazo (opcional)");
+
+            if (!author || !theme || !url) {
+              core.setFailed("Missing required fields in issue form.");
+              return;
+            }
+
+            core.setOutput("author", author);
+            core.setOutput("theme", theme);
+            core.setOutput("url", url);
+            core.setOutput("deadline", deadline);
+
+      - name: Add form to JSON
+        run: |
+          node scripts/add-form.js \
+            "${{ steps.parse.outputs.author }}" \
+            "${{ steps.parse.outputs.theme }}" \
+            "${{ steps.parse.outputs.url }}" \
+            "${{ steps.parse.outputs.deadline }}"
+
+      - name: Generate README
+        run: node scripts/generate-readme.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/forms.json README.md
+          git commit -m "Add form from issue #${{ github.event.issue.number }}"
+          git push
+
+      - name: Close issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Formulario adicionado com sucesso."
+            });
+
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: "closed"
+            });

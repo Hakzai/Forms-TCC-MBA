@@ -3,6 +3,23 @@ const parseDeadline = (deadline) => {
   return new Date(`${deadline}T23:59:59`);
 };
 
+const repoUrl = "https://github.com/OWNER/REPO";
+const issueUrl = `${repoUrl}/issues/new?template=add-form.yml`;
+
+const setupAddFormLink = () => {
+  const link = document.getElementById("add-form-link");
+  if (!link) return;
+
+  if (repoUrl.includes("OWNER/REPO")) {
+    link.textContent = "Configurar URL do repositorio";
+    link.classList.add("disabled");
+    link.setAttribute("aria-disabled", "true");
+    return;
+  }
+
+  link.href = issueUrl;
+};
+
 const isExpired = (deadline) => {
   const date = parseDeadline(deadline);
   if (!date) return false;
@@ -13,7 +30,7 @@ const renderEmpty = (container) => {
   container.innerHTML = `
     <div class="empty">
       <h2>Sem formularios ainda</h2>
-      <p>Use a action "Add Form" no GitHub para registrar o primeiro link.</p>
+      <p>Use o botao "Adicionar formulario" para registrar o primeiro link.</p>
     </div>
   `;
 };
@@ -90,4 +107,5 @@ const loadForms = async () => {
   }
 };
 
+setupAddFormLink();
 loadForms();

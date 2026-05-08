@@ -55,6 +55,33 @@ h1 {
   font-size: 18px;
 }
 
+.hero-actions {
+  margin-top: 18px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.26);
+}
+
+.cta.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(120px, 1fr));
