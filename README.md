@@ -19,3 +19,4 @@ Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os cam
 | Bruno Z. | Pesquisa sobre práticas de gestão do conhecimento e documentação em projetos de software | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSe4Hz6fU9HunfUbaX8kIY3vRnqTZTfdZvKFLEqh5CNCqBya6g/viewform) | - |
 | Victor Hugo B. | Adoção de FinOps no Desenvolvimento Ágil: Equilibrando Eficiência de Custos e Velocidade de Entrega | [Open Form](https://forms.gle/ysdYSH4o96hS4tqx6) | - |
 | Carlos B. | Relação entre liderança imediata e autonomia em equipes Scrum | [Open Form](https://forms.gle/5BfUPzzWhrWxMAyq7) | - |
+| Lucas de Toledo | Governança e gestão de riscos na adoção de inteligência artificial generativa em organizações | [Open Form](https://forms.gle/F1pHMHyaXbyDhso29) | - |
