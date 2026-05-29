@@ -13,6 +13,7 @@ Abra uma nova issue usando o formulario "Adicionar formulario" e preencha os cam
 | Autor | Tema | Formulario | Prazo |
 |---|---|---|---|
 | Bugador D. | Como codar com IA sem Bugs | [Open Form](https://classicosbrasileiros.wordpress.com/wp-content/uploads/2016/05/yvbifl.jpg) | 2026-05-01 |
+| Everton Nunes Ramalho Neto | Impacto da IA Generativa na Produtividade e Qualidade do Código Front-End | [Open Form](https://forms.gle/56RVHCUteYWFpr488) | 06-06-2026 |
 | Matheus T. | Governança preventiva de dados: arquitetura e validação de contratos em plataformas analíticas | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSejaZbawklubJwLO2LoQqKCcP-napNOn7MNefqriUjhH6YPog/viewform) | 01-07-2026 |
 | Anderson F. | Segurança e Automação APIs RESTful (OWASP Top 10) | [Open Form](https://forms.gle/eD43TDe8Lb9Ev56L9) | 01-07-2026 |
 | Cauã Rocha Leite | Integração de sistemas legados com APIs REST | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLScvPgINoZAKbsfKnxjrpVJg0_FCiTrM2zwyrrcOD2DIPIYwVA/viewform?usp=dialog) | 06-10-2026 |
